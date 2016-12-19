@@ -1,0 +1,33 @@
+{
+  "name": "recipe-box",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ewathedoer/recipe-box.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ewathedoer/recipe-box/issues"
+  },
+  "homepage": "https://github.com/ewathedoer/recipe-box#readme",
+  "devDependencies": {
+    "babel-core": "^6.21.0",
+    "babel-loader": "^6.2.10",
+    "babel-preset-react": "^6.16.0",
+    "css-loader": "^0.26.1",
+    "node-sass": "^4.1.0",
+    "sass-loader": "^4.1.0",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.14.0"
+  },
+  "dependencies": {
+    "jquery": "^3.1.1",
+    "materialize-css": "^0.97.8"
+  }
+}
