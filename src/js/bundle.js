@@ -10316,7 +10316,7 @@
 
 
 	// module
-	exports.push([module.id, "body {\n  background-color: yellow; }\n  body h1 {\n    text-transform: uppercase; }\n", ""]);
+	exports.push([module.id, "body {\n  background-color: #fff; }\n  body .brand-logo {\n    text-transform: uppercase; }\n  body nav {\n    background-color: #e91e63; }\n  body .title {\n    position: absolute;\n    bottom: 0;\n    left: 0;\n    background-color: rgba(18, 18, 18, 0.5);\n    color: #fff;\n    width: 100%;\n    text-align: center; }\n\n@media screen and (min-width: 768px) {\n  .title {\n    padding: 1em 0; } }\n\n@media screen and (min-width: 992px) {\n  .brand-logo {\n    margin-left: 15%; }\n  .right {\n    float: right;\n    margin-right: 15%; } }\n\n@media screen and (min-width: 1025px) {\n  body nav {\n    background-color: #121212; } }\n", ""]);
 
 	// exports
 
@@ -10633,7 +10633,7 @@
 /* 7 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;var __WEBPACK_AMD_DEFINE_RESULT__;var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_LOCAL_MODULE_0__;var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
+	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_LOCAL_MODULE_0__;var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;var __WEBPACK_AMD_DEFINE_RESULT__;var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 	 * Materialize v0.97.8 (http://materializecss.com)
 	 * Copyright 2014-2015 Materialize
 	 * MIT License (https://raw.githubusercontent.com/Dogfalo/materialize/master/LICENSE)

@@ -1,20 +1,42 @@
-$primary-color: color("purple", "lighten-2") !default
-$primary-color-light: false !default
-$primary-color-dark: false !default
-//@if not $primary-color-light {
-//  $primary-color-light: lighten($primary-color, 15%)
-//}
-//@if not $primary-color-dark {
-//  $primary-color-dark: darken($primary-color, 15%)
-//}
-$secondary-color: color("teal", "lighten-1") !default
-$success-color: color("green", "base") !default
-$error-color: color("purple", "base") !default
+$primary-color: #e91e63
+$secondary-color: #121212
+$fillin-color: #fff
 
-$link-color: color("light-blue", "darken-1") !default
+$success-color: #00bcd4
+$error-color: #ffeb3b
+$link-color: #e91e63
 
 body
-  background-color: yellow
+  background-color: $fillin-color
   
-  h1
+  .brand-logo
     text-transform: uppercase
+  
+  nav
+    background-color: $primary-color
+  
+  .title
+    position: absolute
+    bottom: 0
+    left: 0
+    background-color: rgba(18,18,18,0.5)
+    color: $fillin-color
+    width: 100%
+    text-align: center
+
+@media screen and (min-width: 768px)
+  .title  
+    padding: 1em 0
+
+@media screen and (min-width: 992px)
+  .brand-logo
+    margin-left: 15%
+    
+  .right
+    float: right
+    margin-right: 15%
+
+@media screen and (min-width: 1025px)
+  body
+    nav
+      background-color: $secondary-color
