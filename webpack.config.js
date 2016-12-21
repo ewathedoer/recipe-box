@@ -1,7 +1,8 @@
 module.exports = {
 	entry: [
-    './js/main.js',
-    './node_modules/materialize-css/dist/js/materialize.min.js'
+    './node_modules/jquery/dist/jquery.min.js',
+    './node_modules/materialize-css/dist/js/materialize.min.js',
+    './js/main.js'
   ],
 	output: {
 		path: './src/js',
