@@ -32,6 +32,20 @@ body
     transform-origin: center
     transform: rotate(180deg)
     top: 0
+  
+  .card-title
+    text-transform: capitalize
+    padding-left: 20px
+    
+  .tags
+    padding: 0 0 10px 20px
+  
+  .card .card-action a:not(.btn):not(.btn-large):not(.btn-floating)
+    color: $primary-color
+    
+    &:hover
+      color: $success-color
+  
 
 @media screen and (min-width: 768px)
   .title  
@@ -41,7 +55,7 @@ body
   body
     .brand-logo
       margin-left: 15%
-
+      
     .right
       float: right
       margin-right: 15%
@@ -55,3 +69,9 @@ body
     .fixed-action-btn
       right: 5%
       top: 18px
+    
+    .brand-logo
+      margin-left: 0
+    
+    .back
+      margin-left: 15%;
