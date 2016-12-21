@@ -23,20 +23,30 @@ body
     color: $fillin-color
     width: 100%
     text-align: center
+  
+  .fixed-action-btn
+    right: 10px
+    bottom: 10px
 
 @media screen and (min-width: 768px)
   .title  
     padding: 1em 0
 
 @media screen and (min-width: 992px)
-  .brand-logo
-    margin-left: 15%
-    
-  .right
-    float: right
-    margin-right: 15%
+  body
+    .brand-logo
+      margin-left: 15%
+
+    .right
+      float: right
+      margin-right: 15%
+
 
 @media screen and (min-width: 1025px)
   body
     nav
       background-color: $secondary-color
+    
+    .fixed-action-btn
+      right: 5%
+      top: 18px
