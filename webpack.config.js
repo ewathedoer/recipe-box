@@ -2,10 +2,10 @@ module.exports = {
 	entry: [
     './node_modules/jquery/dist/jquery.min.js',
     './node_modules/materialize-css/dist/js/materialize.min.js',
-    './js/main.js'
+    './src/js/main.js'
   ],
 	output: {
-		path: './src/js',
+		path: './dist/js',
 		filename: 'bundle.js'
 	},
 	module: {

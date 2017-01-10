@@ -1,4 +1,4 @@
-require('./../css/main.sass');
+require('./css/main.sass');
 
 $('.chips').material_chip({
   placeholder: '+Tag',
