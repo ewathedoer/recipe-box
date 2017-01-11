@@ -9,7 +9,7 @@ export default class HomeCard extends React.Component {
         <div className="card">
           <div className="card-image">
             <Image className="home-img" />
-            <Title />
+            <Title className="title" title={this.props.title}/>
           </div>
         </div>
       </a>

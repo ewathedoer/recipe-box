@@ -6,7 +6,16 @@ export default class Header extends React.Component {
     return (
       <nav>
         <div className="nav-wrapper">
-          <a href="#" className="brand-logo">Recipe Box</a>
+          {this.props.title ? (
+            <div>
+              <ul className="left back">
+                <li><a href="#"><i className="material-icons back-arrow">trending_flat</i></a></li>
+              </ul>
+              <h1 className="brand-logo subpage">{this.props.title}</h1>
+            </div>
+          ) : (
+            <a href="#" className="brand-logo">Recipe Box</a>
+          )}
           <Search />
         </div>
       </nav>

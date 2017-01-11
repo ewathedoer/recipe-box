@@ -3,10 +3,10 @@ require('../css/main.sass');
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Home from './pages/Home';
+import Details from './pages/Details';
 
 const app = document.getElementById("app");
-ReactDOM.render(<Home/>, app);
+ReactDOM.render(<Details />, app);
 
 $('.chips').material_chip({
   placeholder: '+Tag',
