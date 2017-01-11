@@ -1,3 +1,4 @@
+cont $ = require('jquery');
 require('./css/main.sass');
 
 $('.chips').material_chip({
