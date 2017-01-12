@@ -12,7 +12,6 @@ export default class Tags extends React.Component {
     }
     return content;
   }
-  
   render() {
     return (
       <div className="tags right">
