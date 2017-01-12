@@ -2,6 +2,9 @@ import React from 'react';
 import Header from '../components/Header';
 import Title from '../components/Title';
 import Tags from '../components/Tags';
+import Image from '../components/Image';
+import Ingredients from '../components/Ingredients';
+import Instructions from '../components/Instructions';
 
 export default class Details extends React.Component {
   render() {
@@ -17,32 +20,17 @@ export default class Details extends React.Component {
                 <Title className="card-title" title="crumble" />
                 <Tags tags={["fruit", "sweets", "dessert"]} />
                 <div className="card-image">
-                  <img src="img/sample-2.JPG" />
+                  <Image source="../../src/img/sample-2.JPG" />
                 </div>
                 <div className="card-content">
                   <h4>
                     Ingredients:
                   </h4>
-                  <ul>
-                    <li>1 tablespoon of butter</li>
-                    <li>1/2 cup almonds</li>
-                    <li>1 teaspoon of brown sugar</li>
-                    <li>1/2 cup oatmeal</li>
-                    <li>1/3 cup walnuts</li>
-                    <li>pear</li>
-                    <li>peach</li>
-                    <li>black raspberries</li>
-                  </ul>
+                  <Ingredients />
                   <h4>
                     Instructions:
                   </h4>
-                  <p>
-                    Crush almonds and knead the topping with the rest of topping ingredients. 
-                    Cut fruits into smaller pieces. Put them into small ovenproof dishes.
-                    Cover the fruit with the topping.
-                    Bake about 30 minutes until the topping gets gold and the fruit boil in their juices. 
-                    Serve hot with some good coffee or with ice cream. Share with those you love!
-                  </p>
+                  <Instructions />
                 </div>
                 <div className="card-action">
                   <a href="#">edit</a>
