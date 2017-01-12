@@ -20,7 +20,7 @@ export default class Details extends React.Component {
                 <Title className="card-title" title="crumble" />
                 <Tags tags={["fruit", "sweets", "dessert"]} />
                 <div className="card-image">
-                  <Image source="../../src/img/sample-2.JPG" />
+                  <Image alt="crumble" source="img/sample-2.JPG" />
                 </div>
                 <div className="card-content">
                   <h4>

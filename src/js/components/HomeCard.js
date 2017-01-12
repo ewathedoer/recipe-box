@@ -8,7 +8,7 @@ export default class HomeCard extends React.Component {
       <a href="http://theonewhodo.es">
         <div className="card">
           <div className="card-image">
-            <Image className="home-img" source="/../src/img/sample.JPG" />
+            <Image className="home-img" source="img/sample.JPG" alt={this.props.title} />
             <Title className="title" title={this.props.title}/>
           </div>
         </div>
