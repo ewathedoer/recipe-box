@@ -2,6 +2,7 @@ import React from 'react';
 import HomeCard from '../components/HomeCard';
 import Header from '../components/Header';
 import AddButton from '../components/AddButton';
+import {Link} from 'react-router';
 
 export default class Home extends React.Component {
   render() {
@@ -48,7 +49,9 @@ export default class Home extends React.Component {
               <HomeCard title="fig tart" />
             </div>
           </div>
-          <AddButton />
+          <Link to="edition">
+            <AddButton />
+          </Link>
         </div>
       
       </section>

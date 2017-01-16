@@ -7,6 +7,12 @@ import Ingredients from '../components/Ingredients';
 import Instructions from '../components/Instructions';
 
 export default class Edition extends React.Component {
+  componentDidMount() {
+    $('.chips').material_chip({
+      placeholder: '+Tag',
+      secondaryPlaceholder: '+Tag'
+    });
+  }
   render() {
     return (
       <section className="edition-view">

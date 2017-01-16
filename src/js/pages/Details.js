@@ -5,6 +5,7 @@ import Tags from '../components/Tags';
 import Image from '../components/Image';
 import Ingredients from '../components/Ingredients';
 import Instructions from '../components/Instructions';
+import {Link} from 'react-router';
 
 export default class Details extends React.Component {
   render() {
@@ -33,7 +34,9 @@ export default class Details extends React.Component {
                   <Instructions instructions={"Crush almonds and knead the topping with the rest of topping ingredients. Cut fruits into smaller pieces. Put them into small ovenproof dishes. Cover the fruit with the topping. Bake about 30 minutes until the topping gets gold and the fruit boil in their juices. Serve hot with some good coffee or with ice cream. Share with those you love!"} />
                 </div>
                 <div className="card-action">
-                  <a href="#">edit</a>
+                  <Link to="edition">
+                    <a href="#">edit</a>
+                  </Link>
                   <a href="#">delete</a>
                 </div>
               </div>
