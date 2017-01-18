@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import Edition from './pages/Edition';
 import Details from './pages/Details';
 import {Router, Route, IndexRoute, hashHistory} from 'react-router';
+import {saveRecipe, loadRecipe, recipeList} from './logic.js';
 
 const app = document.getElementById("app");
 ReactDOM.render(

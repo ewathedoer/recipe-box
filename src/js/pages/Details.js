@@ -35,7 +35,7 @@ export default class Details extends React.Component {
                 </div>
                 <div className="card-action">
                   <Link to="edition">
-                    <a href="#">edit</a>
+                    edit
                   </Link>
                   <a href="#">delete</a>
                 </div>
