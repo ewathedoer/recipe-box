@@ -1,6 +1,21 @@
 import React from 'react';
 
 export default class Image extends React.Component {
+  componentDidMount() {
+    let imgTag = $('#displayed-image'),
+        that = this;
+    $('.upload-file').on('change', function() {
+      let fr = new FileReader();
+      fr.onload = function() {
+        imgTag.attr('src', this.result);
+        that.props.onChange(this.result);
+      };
+      if (this.files.length > 0) {
+        fr.readAsDataURL(this.files[0]);
+      }
+    });
+  }
+  
   renderEditableImage() {
     return this.props.source ?
       (
@@ -10,9 +25,10 @@ export default class Image extends React.Component {
         </div>
       ) :
       (
-        <a href="#" className="empty-upload">
-          <img src="icons/empty-image.png" alt={this.props.alt} className={this.props.className} />
-        </a>
+        <div className="empty-upload">
+          <img src="icons/empty-image.png" alt={this.props.alt} id="displayed-image" className={this.props.className} />
+          <input type="file" name="upload-file" className="upload-file" />
+        </div>
       );
   }
   

@@ -1,6 +1,19 @@
 import React from 'react';
 
 export default class Tags extends React.Component {
+  componentDidMount() {
+    let that = this;
+    $('.chips').material_chip({
+      placeholder: '+Tag',
+      secondaryPlaceholder: '+Tag'
+    });
+    $('.chips').on('chip.add', function(e, chip){
+      that.props.onChange($('.chips').material_chip('data'));
+    });
+    $('.chips').on('chip.delete', function(e, chip){
+      that.props.onChange($('.chips').material_chip('data'));
+    });
+  }
   renderTags() {
     let content = [];
     if (this.props.tags) {

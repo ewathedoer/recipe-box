@@ -18,6 +18,8 @@ export default class Edition extends React.Component {
       instructions: ""
     };
     this.onTitleChange = this.onTitleChange.bind(this);
+    this.onTagsChange = this.onTagsChange.bind(this);
+    this.onImageChange = this.onImageChange.bind(this);
     this.onIngredientsChange = this.onIngredientsChange.bind(this);
     this.onInstructionsChange = this.onInstructionsChange.bind(this);
     this.saveRecipe = this.saveRecipe.bind(this);
@@ -31,6 +33,20 @@ export default class Edition extends React.Component {
       name: event.target.value
     });
   }
+  onTagsChange(tagsList) {
+    let tags = [];
+    for (let i=0; i<tagsList.length; i++) {
+      tags.push(tagsList[i].tag);
+    }
+    this.setState({
+      tags: tags
+    });
+  }
+  onImageChange(image) {
+    this.setState({
+      image: image
+    });
+  }
   onIngredientsChange(event) {
     this.setState({
       ingredients: event.target.value
@@ -40,13 +56,6 @@ export default class Edition extends React.Component {
     this.setState({
       instructions: event.target.value
     });
-  }
-  componentDidMount() {
-    $('.chips').material_chip({
-      placeholder: '+Tag',
-      secondaryPlaceholder: '+Tag'
-    });
-    /*saveRecipe({name: "salad", tags: ["veggies", "healthy"], ingredients: "something", instructions: "sth else"});*/
   }
   render() {
     return (
@@ -63,9 +72,9 @@ export default class Edition extends React.Component {
                     </div>
                   </div>
                 </div>
-                <Tags editable="true" />
+                <Tags editable="true" onChange={this.onTagsChange} />
                 <div className="card-image">
-                  <Image editable="true" />
+                  <Image editable="true" onChange={this.onImageChange} />
                 </div>
                 <div className="card-content">
                   <div className="row">
