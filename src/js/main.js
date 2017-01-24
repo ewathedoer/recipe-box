@@ -7,13 +7,13 @@ import Home from './pages/Home';
 import Edition from './pages/Edition';
 import Details from './pages/Details';
 import {Router, Route, IndexRoute, hashHistory} from 'react-router';
-import {saveRecipe, loadRecipe, recipeList} from './logic.js';
 
 const app = document.getElementById("app");
 ReactDOM.render(
   <Router history={hashHistory}>
     <Route path="/" component={Home} />
-    <Route path="edition" component={Edition} />
-    <Route path="details" component={Details} />
+    <Route path="addition" component={Edition} />
+    <Route path="edition/:recipe" component={Edition} />
+    <Route path="details/:recipe" component={Details} />
   </Router>, 
   app);

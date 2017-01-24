@@ -5,7 +5,7 @@ export default class Instructions extends React.Component {
     return this.props.editable ? 
       (
         <div className="input-field">
-          <textarea id="textarea1" className="materialize-textarea" onChange={this.props.onChange}>{this.props.instructions}</textarea>
+          <textarea id="textarea1" className="materialize-textarea" value={this.props.instructions} onChange={this.props.onChange}></textarea>
           <label htmlFor="textarea1">Instructions</label>
         </div>
       ) :

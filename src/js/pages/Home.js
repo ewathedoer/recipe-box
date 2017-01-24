@@ -3,8 +3,29 @@ import HomeCard from '../components/HomeCard';
 import Header from '../components/Header';
 import AddButton from '../components/AddButton';
 import {Link} from 'react-router';
+import {recipeList} from '../logic.js';
 
 export default class Home extends React.Component {
+  constructor(props) {
+    super(props);
+    this.renderHomeCards = this.renderHomeCards.bind(this);
+    let list = recipeList();
+    this.state = {
+      recipes: list
+    };
+  }
+  renderHomeCards() {
+    let result = [];
+    for (let i=0; i<this.state.recipes.length; i++) {
+      let recipeItem = this.state.recipes[i];
+      result.push(
+        <div className="col s6 m3 l3" key={i}>
+          <HomeCard title={recipeItem.name} image={recipeItem.image} />
+        </div>
+      )
+    }
+    return result;
+  }
   render() {
     return (
       <section className="homepage">
@@ -12,44 +33,9 @@ export default class Home extends React.Component {
         
         <div className="container">
           <div className="row">
-            <div className="col s6 m3 l3">
-              <HomeCard title="fig tart" />
-            </div>
-            <div className="col s6 m3 l3">
-              <HomeCard title="pig fart" />
-            </div>
-            <div className="col s6 m3 l3">
-              <HomeCard title="fig tart" />
-            </div>
-            <div className="col s6 m3 l3">
-              <HomeCard title="fig tart" />
-            </div>
-            <div className="col s6 m3 l3">
-              <HomeCard title="fig tart" />
-            </div>
-            <div className="col s6 m3 l3">
-              <HomeCard title="fig tart" />
-            </div>
-            <div className="col s6 m3 l3">
-              <HomeCard title="fig tart" />
-            </div>
-            <div className="col s6 m3 l3">
-              <HomeCard title="fig tart" />
-            </div>
-            <div className="col s6 m3 l3">
-              <HomeCard title="fig tart" />
-            </div>
-            <div className="col s6 m3 l3">
-              <HomeCard title="fig tart" />
-            </div>
-            <div className="col s6 m3 l3">
-              <HomeCard title="fig tart" />
-            </div>
-            <div className="col s6 m3 l3">
-              <HomeCard title="fig tart" />
-            </div>
+            {this.renderHomeCards()}
           </div>
-          <Link to="edition">
+          <Link to="addition">
             <AddButton />
           </Link>
         </div>

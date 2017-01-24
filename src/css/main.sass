@@ -54,19 +54,30 @@ body
     position: absolute
     top: 10px
     right: 10px
+    width: 64px
+    height: 64px
     
   .empty-upload
     display: block
     position: relative
+
+  .upload-file
+    position: absolute
+    top: 0
+    bottom: 0
+    width: 100%
+    opacity: 0
+    cursor: pointer
+  
+  .alert
+    display: none
     
-    .upload-file
-      position: absolute
-      top: 0
-      bottom: 0
-      width: 100%
-      opacity: 0
+    h2
+      font-size: 1.5em
+      color: $primary-color
   
-  
+  .visible
+    display: block
 
 @media screen and (min-width: 768px)
   .title  

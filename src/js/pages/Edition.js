@@ -5,32 +5,57 @@ import Tags from '../components/Tags';
 import Image from '../components/Image';
 import Ingredients from '../components/Ingredients';
 import Instructions from '../components/Instructions';
-import {saveRecipe} from '../logic.js';
+import {loadRecipe,saveRecipe} from '../logic.js';
 
 export default class Edition extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      name: "",
-      tags: [],
-      image: "",
-      ingredients: "",
-      instructions: ""
-    };
+    if (this.props.params.recipe) {
+      let recipe = loadRecipe(this.props.params.recipe);
+      this.state = {
+        editingName: this.props.params.recipe,
+        recipe: recipe
+      };
+    }
+    else {
+      this.state = {
+        editingName: null,
+        recipe: {
+          name: "",
+          tags: [],
+          image: "",
+          ingredients: "",
+          instructions: ""
+        }
+      };
+    }
     this.onTitleChange = this.onTitleChange.bind(this);
     this.onTagsChange = this.onTagsChange.bind(this);
     this.onImageChange = this.onImageChange.bind(this);
     this.onIngredientsChange = this.onIngredientsChange.bind(this);
     this.onInstructionsChange = this.onInstructionsChange.bind(this);
-    this.saveRecipe = this.saveRecipe.bind(this);
+    this.onClickSave = this.onClickSave.bind(this);
   }
-  saveRecipe(e) {
+  onClickSave(e) {
     e.preventDefault();
-    saveRecipe(this.state);
+    let emptyFields = [];
+    for (let key in this.state.recipe) {
+      if (this.state.recipe.hasOwnProperty(key) && this.state.recipe[key] == "") {
+        emptyFields.push(key);
+      }
+    }
+    if (emptyFields.length>0) {
+      let alertMessage = $(".alert");
+      alertMessage.addClass("visible");
+      alertMessage.find("span").text(emptyFields.join(", "));
+    }
+    saveRecipe(this.state.recipe, this.state.editingName);
   }
   onTitleChange(event) {
     this.setState({
-      name: event.target.value
+      recipe: {
+        name: event.target.value
+      }
     });
   }
   onTagsChange(tagsList) {
@@ -39,22 +64,30 @@ export default class Edition extends React.Component {
       tags.push(tagsList[i].tag);
     }
     this.setState({
-      tags: tags
+      recipe: {
+        tags: tags
+      }
     });
   }
   onImageChange(image) {
     this.setState({
-      image: image
+      recipe: {
+        image: image
+      }
     });
   }
   onIngredientsChange(event) {
     this.setState({
-      ingredients: event.target.value
+      recipe: {
+        ingredients: event.target.value
+      }
     });
   }
   onInstructionsChange(event) {
     this.setState({
-      instructions: event.target.value
+      recipe: {
+        instructions: event.target.value
+      }
     });
   }
   render() {
@@ -68,20 +101,20 @@ export default class Edition extends React.Component {
                 <div className="card-title">
                   <div className="row">
                     <div className="col s12">
-                      <Title editable="true" onChange={this.onTitleChange} />
+                      <Title title={this.state.recipe.name} editable="true" onChange={this.onTitleChange} />
                     </div>
                   </div>
                 </div>
-                <Tags editable="true" onChange={this.onTagsChange} />
+                <Tags tags={this.state.recipe.tags} editable="true" onChange={this.onTagsChange} />
                 <div className="card-image">
-                  <Image editable="true" onChange={this.onImageChange} />
+                  <Image source={this.state.recipe.image} editable="true" onChange={this.onImageChange} />
                 </div>
                 <div className="card-content">
                   <div className="row">
                     <form className="col s12">
                       <div className="row">
                         <div className="col s12">
-                          <Ingredients editable="true" onChange={this.onIngredientsChange} />
+                          <Ingredients ingredients={this.state.recipe.ingredients} editable="true" onChange={this.onIngredientsChange} />
                         </div>
                       </div>
                     </form>
@@ -91,15 +124,21 @@ export default class Edition extends React.Component {
                     <form className="col s12">
                       <div className="row">
                         <div className="col s12">
-                          <Instructions editable="true" onChange={this.onInstructionsChange} />
+                          <Instructions instructions={this.state.recipe.instructions} editable="true" onChange={this.onInstructionsChange} />
                         </div>
                       </div>
                     </form>
                   </div>
                 </div>
+                
+                <div className="alert">
+                  <h2>
+                    The following fields: <span></span> must be filled in to save a recipe.
+                  </h2>
+                </div>
       
                 <div className="card-action">
-                  <a href="#" onClick={this.saveRecipe}>save</a>
+                  <a href="#" onClick={this.onClickSave}>save</a>
                   <a href="#">cancel</a>
                 </div>
               </div>

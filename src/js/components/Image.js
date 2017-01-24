@@ -21,7 +21,10 @@ export default class Image extends React.Component {
       (
         <div>
           <img src={this.props.source} />
-          <a href="#" className="upload"><img src="icons/upload-icon.png" alt="upload a photo" /></a>
+          <div className="upload">
+            <img src="icons/upload-icon.png" alt="upload a photo" />
+            <input type="file" name="upload-file" className="upload-file" />
+          </div>
         </div>
       ) :
       (
