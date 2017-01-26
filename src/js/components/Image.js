@@ -7,7 +7,8 @@ export default class Image extends React.Component {
     $('.upload-file').on('change', function() {
       let fr = new FileReader();
       fr.onload = function() {
-        imgTag.attr('src', this.result);
+        imgTag.css('visibility', 'hidden');
+        imgTag.parent().attr('style', 'background-image: url(' + this.result + ')');
         that.props.onChange(this.result);
       };
       if (this.files.length > 0) {
@@ -39,7 +40,7 @@ export default class Image extends React.Component {
     return this.props.editable ?
       this.renderEditableImage() :
       (
-        <img src={this.props.source} alt={this.props.alt} className={this.props.className} />
+        <div style={{backgroundImage: 'url(' + this.props.source + ')'}} alt={this.props.alt} className={"img " + this.props.className}></div>
       );
   }
 }

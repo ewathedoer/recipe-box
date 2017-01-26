@@ -38,6 +38,7 @@ export default class Edition extends React.Component {
   }
   onClickSave(e) {
     e.preventDefault();
+    $('.card-action .btn').addClass('disable');
     let emptyFields = [];
     for (let key in this.state.recipe) {
       if (this.state.recipe.hasOwnProperty(key) && this.state.recipe[key] == "") {
@@ -48,14 +49,18 @@ export default class Edition extends React.Component {
       let alertMessage = $(".alert");
       alertMessage.addClass("visible");
       alertMessage.find("span").text(emptyFields.join(", "));
+      $('.card-action .btn').removeClass('disable');
+    } else {
+      saveRecipe(this.state.recipe, this.state.editingName);
+      $('.card-action .btn').removeClass('disable');
+      this.props.router.push('/');
     }
-    saveRecipe(this.state.recipe, this.state.editingName);
   }
   onTitleChange(event) {
     this.setState({
-      recipe: {
+      recipe: Object.assign(this.state.recipe, {
         name: event.target.value
-      }
+      })
     });
   }
   onTagsChange(tagsList) {
@@ -64,30 +69,30 @@ export default class Edition extends React.Component {
       tags.push(tagsList[i].tag);
     }
     this.setState({
-      recipe: {
+      recipe: Object.assign(this.state.recipe, {
         tags: tags
-      }
+      })
     });
   }
   onImageChange(image) {
     this.setState({
-      recipe: {
+      recipe: Object.assign(this.state.recipe, {
         image: image
-      }
+      })
     });
   }
   onIngredientsChange(event) {
     this.setState({
-      recipe: {
+      recipe: Object.assign(this.state.recipe, {
         ingredients: event.target.value
-      }
+      })
     });
   }
   onInstructionsChange(event) {
     this.setState({
-      recipe: {
+      recipe: Object.assign(this.state.recipe, {
         instructions: event.target.value
-      }
+      })
     });
   }
   render() {
@@ -101,20 +106,20 @@ export default class Edition extends React.Component {
                 <div className="card-title">
                   <div className="row">
                     <div className="col s12">
-                      <Title title={this.state.recipe.name} editable="true" onChange={this.onTitleChange} />
+                      <Title editable="true" onChange={this.onTitleChange} />
                     </div>
                   </div>
                 </div>
-                <Tags tags={this.state.recipe.tags} editable="true" onChange={this.onTagsChange} />
+                <Tags editable="true" onChange={this.onTagsChange} />
                 <div className="card-image">
-                  <Image source={this.state.recipe.image} editable="true" onChange={this.onImageChange} />
+                  <Image editable="true" onChange={this.onImageChange} />
                 </div>
                 <div className="card-content">
                   <div className="row">
                     <form className="col s12">
                       <div className="row">
                         <div className="col s12">
-                          <Ingredients ingredients={this.state.recipe.ingredients} editable="true" onChange={this.onIngredientsChange} />
+                          <Ingredients editable="true" onChange={this.onIngredientsChange} />
                         </div>
                       </div>
                     </form>
@@ -124,7 +129,7 @@ export default class Edition extends React.Component {
                     <form className="col s12">
                       <div className="row">
                         <div className="col s12">
-                          <Instructions instructions={this.state.recipe.instructions} editable="true" onChange={this.onInstructionsChange} />
+                          <Instructions editable="true" onChange={this.onInstructionsChange} />
                         </div>
                       </div>
                     </form>
@@ -138,7 +143,7 @@ export default class Edition extends React.Component {
                 </div>
       
                 <div className="card-action">
-                  <a href="#" onClick={this.onClickSave}>save</a>
+                  <a href="#" className="btn save-btn" onClick={this.onClickSave}>save</a>
                   <a href="#">cancel</a>
                 </div>
               </div>
