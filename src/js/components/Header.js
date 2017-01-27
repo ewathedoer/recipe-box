@@ -1,5 +1,4 @@
 import React from 'react';
-import Search from '../components/Search';
 
 export default class Header extends React.Component {
   render() {
@@ -16,7 +15,6 @@ export default class Header extends React.Component {
           ) : (
             <a href="#" className="brand-logo">Recipe Box</a>
           )}
-          <Search />
         </div>
       </nav>
     );

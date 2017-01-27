@@ -6,7 +6,7 @@ import Image from '../components/Image';
 import Ingredients from '../components/Ingredients';
 import Instructions from '../components/Instructions';
 import {Link} from 'react-router';
-import {loadRecipe} from '../logic.js';
+import {loadRecipe,deleteRecipe} from '../logic.js';
 
 export default class Details extends React.Component {
   constructor(props) {
@@ -15,6 +15,12 @@ export default class Details extends React.Component {
     this.state = {
       recipe: recipe
     };
+    this.onClickDelete = this.onClickDelete.bind(this);
+  }
+  onClickDelete(e) {
+    e.preventDefault();
+    deleteRecipe(this.state.recipe.name);
+    this.props.router.push('/');
   }
   render() {
     return (
@@ -45,7 +51,9 @@ export default class Details extends React.Component {
                   <Link to={"edition/" + this.state.recipe.name}>
                     edit
                   </Link>
-                  <a href="#">delete</a>
+                  <a href="#" onClick={this.onClickDelete}>
+                    delete
+                  </a>
                 </div>
               </div>
             </div>

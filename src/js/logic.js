@@ -18,7 +18,7 @@ export function saveRecipe(newRecipe, editingName) {
         return false;
       } 
     }
-    currentList.push(newRecipe);
+    currentList.push(newRecipe); 
   }
   if (typeof(Storage) !== "undefined") {
     try {
@@ -49,4 +49,17 @@ export function recipeList() {
   } else {
     return [];
   }
+}
+
+export function deleteRecipe(name) {
+  if (typeof(Storage) !== "undefined") {
+    try {
+      localStorage.removeItem('name');
+    }
+    catch (e) {
+      return false;
+    }
+    return true;
+  }
+  return false;
 }
