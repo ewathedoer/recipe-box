@@ -20,8 +20,7 @@ export default class Image extends React.Component {
   renderEditableImage() {
     return this.props.source ?
       (
-        <div>
-          <img src={this.props.source} />
+        <div className="img" style={{backgroundImage: 'url(' + this.props.source + ')'}}>
           <div className="upload">
             <img src="icons/upload-icon.png" alt="upload a photo" />
             <input type="file" name="upload-file" className="upload-file" />

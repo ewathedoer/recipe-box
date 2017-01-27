@@ -4,25 +4,18 @@ export function saveRecipe(newRecipe, editingName) {
   if (typeof newRecipe !== "object" || newRecipe === null) {
     return false;
   }
-  let currentList = recipeList();
-  if (editingName) {
-    for (let i=0; i<currentList.length; i++) {
-      if (editingName === currentList[i].name) {
-        currentList[i] = newRecipe;
-        break;
-      }
+  if (!editingName) {
+    editingName = newRecipe.name;
+    if (localStorage.getItem(editingName)) {
+      return false;
     }
-  } else {
-    for (let i=0; i<currentList.length; i++) {
-      if (newRecipe.name === currentList[i].name ) {
-        return false;
-      } 
-    }
-    currentList.push(newRecipe); 
+  }
+  if (editingName != newRecipe.name) {
+    deleteRecipe(editingName);
   }
   if (typeof(Storage) !== "undefined") {
     try {
-      localStorage.setItem(localStorageKey, JSON.stringify(currentList));
+      localStorage.setItem(newRecipe.name, JSON.stringify(newRecipe));
     }
     catch (e) {
       return false;
@@ -33,28 +26,26 @@ export function saveRecipe(newRecipe, editingName) {
 }
 
 export function loadRecipe(name) {
-  let currentList = recipeList();
-  for (let i=0; i<currentList.length; i++) {
-    if (name == currentList[i].name) {
-      return currentList[i];
-    } 
+  let recipe = localStorage.getItem(name);
+  if (recipe) {
+    return JSON.parse(recipe);
   }
   return false;
 }
 
 export function recipeList() {
-  let list = localStorage.getItem(localStorageKey);
-  if (list !== null) {
-    return JSON.parse(list);
-  } else {
-    return [];
+  let keysList = Object.keys(localStorage);
+  let list = [];
+  for (let key in keysList) {
+    list.push(JSON.parse(localStorage.getItem(keysList[key])));
   }
+  return list;
 }
 
 export function deleteRecipe(name) {
   if (typeof(Storage) !== "undefined") {
     try {
-      localStorage.removeItem('name');
+      localStorage.removeItem(name);
     }
     catch (e) {
       return false;

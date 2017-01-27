@@ -36,6 +36,9 @@ export default class Edition extends React.Component {
     this.onInstructionsChange = this.onInstructionsChange.bind(this);
     this.onClickSave = this.onClickSave.bind(this);
   }
+  componentDidMount() {
+    $('input').trigger('change');
+  }
   onClickSave(e) {
     e.preventDefault();
     $('.card-action .btn').addClass('disable');
@@ -98,7 +101,7 @@ export default class Edition extends React.Component {
   render() {
     return (
       <section className="edition-view">
-        <Header title="create a recipe"/>
+        <Header title={this.state.editingName ? "edit a recipe" : "create a recipe"}/>
         <div className="container">
           <div className="row">
             <div className="col s12 m10 offset-m1 l8 offset-l2">
@@ -106,20 +109,20 @@ export default class Edition extends React.Component {
                 <div className="card-title">
                   <div className="row">
                     <div className="col s12">
-                      <Title editable="true" onChange={this.onTitleChange} />
+                      <Title title={this.state.recipe.name} editable="true" onChange={this.onTitleChange} />
                     </div>
                   </div>
                 </div>
-                <Tags editable="true" onChange={this.onTagsChange} />
+                <Tags tags={this.state.recipe.tags} editable="true" onChange={this.onTagsChange} />
                 <div className="card-image">
-                  <Image editable="true" onChange={this.onImageChange} />
+                  <Image source={this.state.recipe.image} editable="true" onChange={this.onImageChange} />
                 </div>
                 <div className="card-content">
                   <div className="row">
                     <form className="col s12">
                       <div className="row">
                         <div className="col s12">
-                          <Ingredients editable="true" onChange={this.onIngredientsChange} />
+                          <Ingredients ingredients={this.state.recipe.ingredients} editable="true" onChange={this.onIngredientsChange} />
                         </div>
                       </div>
                     </form>
@@ -129,7 +132,7 @@ export default class Edition extends React.Component {
                     <form className="col s12">
                       <div className="row">
                         <div className="col s12">
-                          <Instructions editable="true" onChange={this.onInstructionsChange} />
+                          <Instructions instructions={this.state.recipe.instructions} editable="true" onChange={this.onInstructionsChange} />
                         </div>
                       </div>
                     </form>

@@ -19,13 +19,16 @@ export default class Details extends React.Component {
   }
   onClickDelete(e) {
     e.preventDefault();
+    if (!confirm('Are you sure?')) {
+      return;
+    }
     deleteRecipe(this.state.recipe.name);
     this.props.router.push('/');
   }
   render() {
     return (
       <section className="recipe-view">
-        <Header title="crumble"/>
+        <Header title={this.state.recipe.name} />
         
         <div className="container">
 

@@ -19,7 +19,7 @@ export default class Home extends React.Component {
     for (let i=0; i<this.state.recipes.length; i++) {
       let recipeItem = this.state.recipes[i];
       result.push(
-        <div className="col s6 m3 l3" key={i}>
+        <div className="col s6 m4 l3" key={i}>
           <HomeCard title={recipeItem.name} image={recipeItem.image} />
         </div>
       )

@@ -93,38 +93,43 @@ body {
   body .homepage .card .card-image {
     height: 250px; }
 
-@media screen and (min-width: 768px) {
+@media screen and (max-width: 450px) {
   /* line 104, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
+  .row .col.s6 {
+    width: 100%; } }
+
+@media screen and (min-width: 768px) {
+  /* line 108, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
   .title {
     padding: 1em 0; } }
 
 @media screen and (min-width: 992px) {
-  /* line 109, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
+  /* line 113, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
   body .brand-logo {
     margin-left: 15%; }
-  /* line 112, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
+  /* line 116, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
   body .right {
     float: right;
     margin-right: 15%; }
-  /* line 116, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
+  /* line 120, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
   body .tags.right {
     margin-right: 0; } }
 
 @media screen and (min-width: 1025px) {
-  /* line 122, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
+  /* line 126, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
   body nav {
     background-color: #121212; }
-  /* line 125, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
+  /* line 129, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
   body .fixed-action-btn {
     right: 5%;
     top: 18px; }
-  /* line 129, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
+  /* line 133, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
   body .brand-logo {
     margin-left: 15%; }
-  /* line 132, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
+  /* line 136, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
   body .brand-logo.subpage {
     margin-left: 0; }
-  /* line 135, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
+  /* line 139, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
   body .back {
     margin-left: 15%; } }
 

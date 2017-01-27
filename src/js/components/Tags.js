@@ -3,9 +3,18 @@ import React from 'react';
 export default class Tags extends React.Component {
   componentDidMount() {
     let that = this;
+    let chipData = [];
+    if (this.props.tags.length > 0) {
+      for (let i=0; i<this.props.tags.length; i++) {
+        chipData.push({
+          tag: this.props.tags[i]
+        });
+      }
+    }
     $('.chips').material_chip({
       placeholder: '+Tag',
-      secondaryPlaceholder: '+Tag'
+      secondaryPlaceholder: '+Tag',
+      data: chipData
     });
     $('.chips').on('chip.add', function(e, chip){
       that.props.onChange($('.chips').material_chip('data'));
@@ -16,12 +25,11 @@ export default class Tags extends React.Component {
   }
   renderTags() {
     let content = [];
-    if (this.props.tags) {
+    if (this.props.tags.length > 0) {
       for (let i=0; i<this.props.tags.length; i++) {
         content.push(
           <div className="chip" key={i}>
             {this.props.tags[i]}
-            {this.props.editable && <i className="close material-icons">close</i>}
           </div>
         );
       }
@@ -29,10 +37,13 @@ export default class Tags extends React.Component {
     return content;
   }
   render() {
-    return (
-      <div className={this.props.editable ? 'tags' : 'tags right'}>
+    return this.props.editable ? (
+      <div className="tags">
+        <div className="chips"></div>
+      </div>
+    ) : (
+      <div className="tags right">
         {this.renderTags()}
-        {this.props.editable && <div className="chips"></div>}
       </div>
     );
   }
