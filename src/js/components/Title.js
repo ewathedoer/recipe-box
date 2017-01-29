@@ -5,7 +5,7 @@ export default class Title extends React.Component {
     return this.props.editable ?
       (
         <div className="input-field">
-          <input id="recipe-title" type="text" className="validate" defaultValue={this.props.title} />
+          <input id="recipe-title" type="text" className="validate" value={this.props.title} onChange={this.props.onChange} />
           <label className="active" htmlFor="recipe-title">Title</label>
         </div>
       ) :

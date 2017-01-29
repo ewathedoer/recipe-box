@@ -2,39 +2,61 @@ import React from 'react';
 import Header from '../components/Header';
 import Title from '../components/Title';
 import Tags from '../components/Tags';
-import Image from '../components/Image';
+import Photo from '../components/Photo';
 import Ingredients from '../components/Ingredients';
 import Instructions from '../components/Instructions';
+import {Link} from 'react-router';
+import {loadRecipe,deleteRecipe} from '../logic.js';
 
 export default class Details extends React.Component {
+  constructor(props) {
+    super(props);
+    let recipe = loadRecipe(this.props.params.recipe);
+    this.state = {
+      recipe: recipe
+    };
+    this.onClickDelete = this.onClickDelete.bind(this);
+  }
+  onClickDelete(e) {
+    e.preventDefault();
+    if (!confirm('Are you sure?')) {
+      return;
+    }
+    deleteRecipe(this.state.recipe.name);
+    this.props.router.push('/');
+  }
   render() {
     return (
       <section className="recipe-view">
-        <Header title="crumble"/>
+        <Header title={this.state.recipe.name} />
         
         <div className="container">
 
           <div className="row">
             <div className="col s12 m10 offset-m1 l8 offset-l2">
               <div className="card">
-                <Title className="card-title" title="crumble" />
-                <Tags tags={["fruit", "sweets", "dessert"]} />
+                <Title className="card-title" title={this.state.recipe.name} />
+                <Tags tags={this.state.recipe.tags} />
                 <div className="card-image">
-                  <Image alt="crumble" source="img/sample-2.JPG" />
+                  <Photo alt={this.state.recipe.name} source={this.state.recipe.image} />
                 </div>
                 <div className="card-content">
                   <h4>
                     Ingredients:
                   </h4>
-                  <Ingredients ingredients={["1 tablespoon of butter", "1/2 cup almonds", "1 teaspoon of brown sugar", "1/2 cup oatmeal", "1/3 cup walnuts", "pear", "peach", "black raspberries"]} />
+                  <Ingredients ingredients={this.state.recipe.ingredients} />
                   <h4>
                     Instructions:
                   </h4>
-                  <Instructions instructions={"Crush almonds and knead the topping with the rest of topping ingredients. Cut fruits into smaller pieces. Put them into small ovenproof dishes. Cover the fruit with the topping. Bake about 30 minutes until the topping gets gold and the fruit boil in their juices. Serve hot with some good coffee or with ice cream. Share with those you love!"} />
+                  <Instructions instructions={this.state.recipe.instructions} />
                 </div>
                 <div className="card-action">
-                  <a href="#">edit</a>
-                  <a href="#">delete</a>
+                  <Link to={"edition/" + this.state.recipe.name}>
+                    edit
+                  </Link>
+                  <a href="#" onClick={this.onClickDelete}>
+                    delete
+                  </a>
                 </div>
               </div>
             </div>

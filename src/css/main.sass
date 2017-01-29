@@ -43,6 +43,12 @@ body
     
   .tags
     padding: 0 20px 10px
+    
+  .card .card-action .btn
+    margin-right: 1em
+    
+    &.save-btn
+      background-color: #e91e63
   
   .card .card-action a:not(.btn):not(.btn-large):not(.btn-floating)
     color: $primary-color
@@ -54,12 +60,51 @@ body
     position: absolute
     top: 10px
     right: 10px
+    width: 64px
+    height: 64px
     
   .empty-upload
     display: block
-  
-  
+    position: relative
+    background-size: cover
+    background-position: center center
 
+  .upload-file
+    position: absolute
+    top: 0
+    bottom: 0
+    width: 100%
+    opacity: 0
+    cursor: pointer
+  
+  .alert
+    display: none
+    
+    h2
+      font-size: 1.5em
+      color: $primary-color
+  
+  .visible
+    display: block
+    
+  .card .card-image
+    clear: both
+    height: 353px
+    overflow: hidden
+    background-size: cover
+    
+    .img
+      height: 100%
+      background-size: cover
+      background-position: center center
+      
+  .homepage .card .card-image
+    height: 250px
+
+@media screen and (max-width: 450px)
+  .row .col.s6
+    width: 100%
+    
 @media screen and (min-width: 768px)
   .title  
     padding: 1em 0
