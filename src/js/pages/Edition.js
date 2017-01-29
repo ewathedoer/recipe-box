@@ -2,7 +2,7 @@ import React from 'react';
 import Header from '../components/Header';
 import Title from '../components/Title';
 import Tags from '../components/Tags';
-import Image from '../components/Image';
+import Photo from '../components/Photo';
 import Ingredients from '../components/Ingredients';
 import Instructions from '../components/Instructions';
 import {loadRecipe,saveRecipe} from '../logic.js';
@@ -115,7 +115,7 @@ export default class Edition extends React.Component {
                 </div>
                 <Tags tags={this.state.recipe.tags} editable="true" onChange={this.onTagsChange} />
                 <div className="card-image">
-                  <Image source={this.state.recipe.image} editable="true" onChange={this.onImageChange} />
+                  <Photo source={this.state.recipe.image} editable="true" onChange={this.onImageChange} />
                 </div>
                 <div className="card-content">
                   <div className="row">

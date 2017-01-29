@@ -1,5 +1,5 @@
 import React from 'react';
-import Image from '../components/Image';
+import Photo from '../components/Photo';
 import Title from '../components/Title';
 import {Link} from 'react-router';
 
@@ -9,7 +9,7 @@ export default class HomeCard extends React.Component {
       <Link to={"details/" + this.props.title}>
         <div className="card">
           <div className="card-image">
-            <Image className="home-img" source={this.props.image} alt={this.props.title} />
+            <Photo className="home-img" source={this.props.image} alt={this.props.title} />
             <Title className="title" title={this.props.title}/>
           </div>
         </div>

@@ -2,7 +2,7 @@ import React from 'react';
 import Header from '../components/Header';
 import Title from '../components/Title';
 import Tags from '../components/Tags';
-import Image from '../components/Image';
+import Photo from '../components/Photo';
 import Ingredients from '../components/Ingredients';
 import Instructions from '../components/Instructions';
 import {Link} from 'react-router';
@@ -38,7 +38,7 @@ export default class Details extends React.Component {
                 <Title className="card-title" title={this.state.recipe.name} />
                 <Tags tags={this.state.recipe.tags} />
                 <div className="card-image">
-                  <Image alt={this.state.recipe.name} source={this.state.recipe.image} />
+                  <Photo alt={this.state.recipe.name} source={this.state.recipe.image} />
                 </div>
                 <div className="card-content">
                   <h4>

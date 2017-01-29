@@ -1,20 +1,25 @@
 import React from 'react';
 
-export default class Image extends React.Component {
+export default class Photo extends React.Component {
   componentDidMount() {
-    let imgTag = $('#displayed-image'),
-        that = this;
-    $('.upload-file').on('change', function() {
-      let fr = new FileReader();
-      fr.onload = function() {
-        imgTag.css('visibility', 'hidden');
-        imgTag.parent().attr('style', 'background-image: url(' + this.result + ')');
-        that.props.onChange(this.result);
-      };
+    let that = this;
+    $('body').on('change', '.upload-file', function() {
       if (this.files.length > 0) {
-        fr.readAsDataURL(this.files[0]);
+        that.handleFileUpload(this.files[0]);
       }
     });
+  }
+  
+  handleFileUpload(file) {
+    let imgTag = $('#displayed-image'),
+        that = this,
+        fr = new FileReader();
+    fr.onload = function() {
+      imgTag.css('visibility', 'hidden');
+      imgTag.parent().attr('style', 'background-image: url(' + this.result + ')');
+      that.props.onChange(this.result);
+    };
+    fr.readAsDataURL(file);
   }
   
   renderEditableImage() {
