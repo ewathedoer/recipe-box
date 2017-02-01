@@ -24,6 +24,9 @@ export default class Home extends React.Component {
         </div>
       )
     }
+    if (result.length === 0) {
+      return (<p>Add a new recipe with plus button.</p>);
+    }
     return result;
   }
   render() {
