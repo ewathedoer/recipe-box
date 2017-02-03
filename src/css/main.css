@@ -26,7 +26,7 @@ body {
     bottom: 10px; }
     /* line 36, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
     body .fixed-action-btn:hover .material-icons, body .fixed-action-btn:focus .material-icons {
-      color: #40081B; }
+      color: #4CAF50; }
   /* line 39, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
   body .back-arrow {
     transform-origin: center;
@@ -47,13 +47,13 @@ body {
       background-color: #e91e63; }
       /* line 57, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
       body .card .card-action .btn.save-btn:hover, body .card .card-action .btn.save-btn:focus {
-        color: #40081B; }
+        color: #4CAF50; }
   /* line 60, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
   body .card .card-action a:not(.btn):not(.btn-large):not(.btn-floating) {
     color: #e91e63; }
     /* line 63, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
     body .card .card-action a:not(.btn):not(.btn-large):not(.btn-floating):hover {
-      color: #40081B;
+      color: #4CAF50;
       text-decoration: underline; }
   /* line 67, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
   body .upload {
