@@ -141,14 +141,15 @@ body {
   /* line 149, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
   body .fixed-action-btn {
     right: 5%;
-    top: 18px; }
-  /* line 153, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
+    top: 18px;
+    height: 75px; }
+  /* line 154, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
   body .brand-logo {
     margin-left: 15%; }
-  /* line 156, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
+  /* line 157, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
   body .brand-logo.subpage {
     margin-left: 0; }
-  /* line 159, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
+  /* line 160, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
   body .back {
     margin-left: 15%; } }
 
