@@ -25,7 +25,7 @@ export default class Home extends React.Component {
       )
     }
     if (result.length === 0) {
-      return (<p>Add a new recipe with plus button.</p>);
+      return (<p className="empty-state-text">Add a new recipe with plus button.</p>);
     }
     return result;
   }

@@ -1,8 +1,9 @@
 $primary-color: #e91e63
 $secondary-color: #121212
 $fillin-color: #fff
+$grey: grey
 
-$success-color: #8bc34a
+$success-color: #40081B
 $error-color: #ffeb3b
 $link-color: #e91e63
 
@@ -31,7 +32,10 @@ body
   .fixed-action-btn
     right: 10px
     bottom: 10px
-  
+    
+    &:hover .material-icons, &:focus .material-icons
+      color: $success-color
+
   .back-arrow
     transform-origin: center
     transform: rotate(180deg)
@@ -49,12 +53,16 @@ body
     
     &.save-btn
       background-color: #e91e63
+      
+      &:hover, &:focus
+        color: $success-color
   
   .card .card-action a:not(.btn):not(.btn-large):not(.btn-floating)
     color: $primary-color
     
     &:hover
       color: $success-color
+      text-decoration: underline 
   
   .upload
     position: absolute
@@ -83,13 +91,15 @@ body
     h2
       font-size: 1.5em
       color: $primary-color
+      margin: 0 0 0.5em
+      text-align: center
   
   .visible
     display: block
     
   .card .card-image
     clear: both
-    height: 353px
+    height: 225px
     overflow: hidden
     background-size: cover
     
@@ -100,14 +110,23 @@ body
       
   .homepage .card .card-image
     height: 250px
+  
+  .empty-state-text
+    font-size: 1.5em
+    color: $grey
+    text-align: center
+    margin-top: 2em
 
 @media screen and (max-width: 450px)
   .row .col.s6
     width: 100%
     
 @media screen and (min-width: 768px)
-  .title  
-    padding: 1em 0
+  body
+    .title  
+      padding: 1em 0
+    .card .card-image
+      height: 353px
 
 @media screen and (min-width: 992px)
   body

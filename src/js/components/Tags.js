@@ -12,8 +12,8 @@ export default class Tags extends React.Component {
       }
     }
     $('.chips').material_chip({
-      placeholder: '+Tag',
-      secondaryPlaceholder: '+Tag',
+      placeholder: '+Tag and hit Enter',
+      secondaryPlaceholder: '+Tag and hit enter',
       data: chipData
     });
     $('.chips').on('chip.add', function(e, chip){

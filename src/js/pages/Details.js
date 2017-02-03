@@ -19,7 +19,7 @@ export default class Details extends React.Component {
   }
   onClickDelete(e) {
     e.preventDefault();
-    if (!confirm('Are you sure?')) {
+    if (!confirm('Are you sure you want to delete this recipe?')) {
       return;
     }
     deleteRecipe(this.state.recipe.name);
