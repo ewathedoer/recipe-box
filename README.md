@@ -1,5 +1,5 @@
 # recipe-box
 This is Recipe Box built according to https://www.freecodecamp.com/challenges/build-a-recipe-box 
-The project in development.
+Live preview: http://theonewhodo.es/recipe-box
 
-This project will use React.js and Sass.
+This project is built with React.js and Sass.
