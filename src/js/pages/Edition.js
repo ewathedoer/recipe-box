@@ -37,7 +37,9 @@ export default class Edition extends React.Component {
     this.onClickSave = this.onClickSave.bind(this);
   }
   componentDidMount() {
-    $('input').trigger('change');
+    if (this.state.editingName) {
+      Materialize.updateTextFields();
+    }
   }
   onClickSave(e) {
     e.preventDefault();

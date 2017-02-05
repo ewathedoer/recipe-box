@@ -1,21 +1,20 @@
-const localStorageKey = "recipes";
+const localStorageKey = "recipes-";
 
 export function saveRecipe(newRecipe, editingName) {
   if (typeof newRecipe !== "object" || newRecipe === null) {
     return false;
   }
+  let newName = localStorageKey + newRecipe.name;
   if (!editingName) {
-    editingName = newRecipe.name;
-    if (localStorage.getItem(editingName)) {
+    if (localStorage.getItem(newName)) {
       return false;
     }
-  }
-  if (editingName != newRecipe.name) {
+  } else {
     deleteRecipe(editingName);
   }
   if (typeof(Storage) !== "undefined") {
     try {
-      localStorage.setItem(newRecipe.name, JSON.stringify(newRecipe));
+      localStorage.setItem(newName, JSON.stringify(newRecipe));
     }
     catch (e) {
       return false;
@@ -26,7 +25,7 @@ export function saveRecipe(newRecipe, editingName) {
 }
 
 export function loadRecipe(name) {
-  let recipe = localStorage.getItem(name);
+  let recipe = localStorage.getItem(localStorageKey + name);
   if (recipe) {
     return JSON.parse(recipe);
   }
@@ -37,7 +36,9 @@ export function recipeList() {
   let keysList = Object.keys(localStorage);
   let list = [];
   for (let key in keysList) {
-    list.push(JSON.parse(localStorage.getItem(keysList[key])));
+    if (keysList[key].startsWith(localStorageKey)) {
+      list.push(JSON.parse(localStorage.getItem(keysList[key])));
+    }
   }
   return list;
 }
@@ -45,7 +46,7 @@ export function recipeList() {
 export function deleteRecipe(name) {
   if (typeof(Storage) !== "undefined") {
     try {
-      localStorage.removeItem(name);
+      localStorage.removeItem(localStorageKey + name);
     }
     catch (e) {
       return false;
