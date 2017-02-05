@@ -3,15 +3,18 @@ body {
   background-color: #fff; }
   /* line 13, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
   body .brand-logo {
-    text-transform: uppercase; }
-  /* line 16, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
+    text-transform: uppercase;
+    overflow: hidden;
+    max-width: 75%;
+    text-overflow: ellipsis; }
+  /* line 19, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
   body nav {
     background-color: #e91e63; }
-    /* line 19, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
+    /* line 22, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
     body nav h1 {
       margin: 0;
       line-height: inherit; }
-  /* line 23, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
+  /* line 26, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
   body .title {
     position: absolute;
     bottom: 0;
@@ -20,55 +23,55 @@ body {
     color: #fff;
     width: 100%;
     text-align: center; }
-  /* line 32, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
+  /* line 35, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
   body .fixed-action-btn {
     right: 10px;
     bottom: 10px; }
-    /* line 36, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
+    /* line 39, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
     body .fixed-action-btn:hover .material-icons, body .fixed-action-btn:focus .material-icons {
       color: #4CAF50; }
-  /* line 39, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
+  /* line 42, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
   body .back-arrow {
     transform-origin: center;
     transform: rotate(180deg);
     top: 0; }
-  /* line 44, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
+  /* line 47, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
   body .card-title {
     text-transform: capitalize;
     padding: 10px 20px 0; }
-  /* line 48, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
+  /* line 51, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
   body .tags {
     padding: 0 20px 10px; }
-  /* line 51, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
+  /* line 54, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
   body .card .card-action .btn {
     margin-right: 1em; }
-    /* line 54, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
+    /* line 57, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
     body .card .card-action .btn.save-btn {
       background-color: #e91e63; }
-      /* line 57, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
+      /* line 60, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
       body .card .card-action .btn.save-btn:hover, body .card .card-action .btn.save-btn:focus {
         color: #4CAF50; }
-  /* line 60, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
+  /* line 63, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
   body .card .card-action a:not(.btn):not(.btn-large):not(.btn-floating) {
     color: #e91e63; }
-    /* line 63, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
+    /* line 66, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
     body .card .card-action a:not(.btn):not(.btn-large):not(.btn-floating):hover {
       color: #4CAF50;
       text-decoration: underline; }
-  /* line 67, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
+  /* line 70, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
   body .upload {
     position: absolute;
     top: 10px;
     right: 10px;
     width: 64px;
     height: 64px; }
-  /* line 74, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
+  /* line 77, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
   body .empty-upload {
     display: block;
     position: relative;
     background-size: cover;
     background-position: center center; }
-  /* line 80, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
+  /* line 83, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
   body .upload-file {
     position: absolute;
     top: 0;
@@ -76,33 +79,33 @@ body {
     width: 100%;
     opacity: 0;
     cursor: pointer; }
-  /* line 88, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
+  /* line 91, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
   body .alert {
     display: none; }
-    /* line 91, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
+    /* line 94, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
     body .alert h2 {
       font-size: 1.5em;
       color: #e91e63;
       margin: 0 0 0.5em;
       text-align: center; }
-  /* line 97, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
+  /* line 100, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
   body .visible {
     display: block; }
-  /* line 100, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
+  /* line 103, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
   body .card .card-image {
     clear: both;
     height: 225px;
     overflow: hidden;
     background-size: cover; }
-    /* line 106, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
+    /* line 109, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
     body .card .card-image .img {
       height: 100%;
       background-size: cover;
       background-position: center center; }
-  /* line 111, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
+  /* line 114, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
   body .homepage .card .card-image {
     height: 250px; }
-  /* line 114, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
+  /* line 117, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
   body .empty-state-text {
     font-size: 1.5em;
     color: grey;
@@ -110,46 +113,46 @@ body {
     margin-top: 2em; }
 
 @media screen and (max-width: 450px) {
-  /* line 121, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
+  /* line 124, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
   .row .col.s6 {
     width: 100%; } }
 
 @media screen and (min-width: 768px) {
-  /* line 126, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
+  /* line 129, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
   body .title {
     padding: 1em 0; }
-  /* line 128, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
+  /* line 131, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
   body .card .card-image {
     height: 353px; } }
 
 @media screen and (min-width: 992px) {
-  /* line 133, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
+  /* line 136, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
   body .brand-logo {
     margin-left: 15%; }
-  /* line 136, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
+  /* line 139, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
   body .right {
     float: right;
     margin-right: 15%; }
-  /* line 140, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
+  /* line 143, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
   body .tags.right {
     margin-right: 0; } }
 
 @media screen and (min-width: 1025px) {
-  /* line 146, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
+  /* line 149, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
   body nav {
     background-color: #121212; }
-  /* line 149, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
+  /* line 152, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
   body .fixed-action-btn {
     right: 5%;
     top: 18px;
     height: 75px; }
-  /* line 154, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
+  /* line 157, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
   body .brand-logo {
     margin-left: 15%; }
-  /* line 157, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
+  /* line 160, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
   body .brand-logo.subpage {
     margin-left: 0; }
-  /* line 160, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
+  /* line 163, /Users/thedoer/Documents/projects/recipe-box/src/css/main.sass */
   body .back {
     margin-left: 15%; } }
 

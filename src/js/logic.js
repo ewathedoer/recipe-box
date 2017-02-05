@@ -6,14 +6,10 @@ export function saveRecipe(newRecipe, editingName) {
   }
   let newName = localStorageKey + newRecipe.name;
   if (!editingName) {
-    editingName = newName;
-    if (localStorage.getItem(editingName)) {
+    if (localStorage.getItem(newName)) {
       return false;
     }
   } else {
-    editingName = localStorageKey + editingName;
-  }
-  if (editingName != newName) {
     deleteRecipe(editingName);
   }
   if (typeof(Storage) !== "undefined") {
